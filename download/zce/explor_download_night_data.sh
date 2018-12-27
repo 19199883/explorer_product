@@ -34,7 +34,10 @@ stra_src="czce_tra_${SUFFIX}_`date +%y%m%d`.tar.gz"
 stra_dest="czce_tra_${SUFFIX}_`date +%y%m%d`.tar.bz2"
 echo $stra_src
 echo $stra_dest
-tar --remove-files -xzf $stra_src
+
+openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
+# tar --remove-files -xzf $stra_src
+
 tar --remove-files -cvjf $stra_dest ./backup/log ./backup/*.log
 rm $stra_src
 

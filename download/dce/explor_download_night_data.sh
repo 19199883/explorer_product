@@ -25,8 +25,9 @@ STRA_LOG="/home/u910019/explorer/night28/backup/dce_trad_${SUFFIX}_`date +%y%m%d
 scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
 cd ${STRATEGY_DIR}
 stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-tar -v --remove-files -xzf $stra_src
-rm $stra_src
+openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files -xvzf -
+#tar -v --remove-files -xzf $stra_src
+#rm $stra_src
 
 # download straties's log files from JR server for account night100
 cd $this_dir
@@ -34,8 +35,9 @@ STRA_LOG="/home/u910019/explorer/night100/backup/dce_trad_${SUFFIX}_`date +%y%m%
 scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
 cd ${STRATEGY_DIR}
 stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-tar -v --remove-files -xzf $stra_src
-rm $stra_src
+openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
+#tar -v --remove-files -xzf $stra_src
+#rm $stra_src
 
 #---combine both night28 and night100
 cd $this_dir

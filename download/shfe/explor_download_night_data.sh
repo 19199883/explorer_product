@@ -27,9 +27,10 @@ STRA_LOG_GZ="sh_stra_${SUFFIX}_`date +%y%m%d`.tar.gz"
 STRA_LOG_BJ2="sh_stra_${SUFFIX}_`date +%y%m%d`.tar.bz2"
 scp  -P 44163  "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
 cd ./stra_log
-tar -xvzf $STRA_LOG_GZ 
+openssl des3 -d -k explorer -salt -in $STRA_LOG_GZ | tar --remove-files  -xvzf -
+#tar -xvzf $STRA_LOG_GZ 
 rm $STRA_LOG_GZ
-tar -cvjf $STRA_LOG_BJ2 ./backup
+tar --remove-files -cvjf $STRA_LOG_BJ2 ./backup
 rm -r ./backup
 cd ..
 

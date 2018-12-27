@@ -22,33 +22,33 @@ TICKDATA_DIR="./tickdata"
 
 
 # download straties's log files from JR server for account day28
-#			cd $this_dir
-#			STRA_LOG="/home/u910019/explorer/day28/backup/dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-#			scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
-#			cd ${STRATEGY_DIR}
-#			echo `pwd`
-#			stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-#			openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
-#			#tar -v --remove-files -xzf $stra_src
-#			rm $stra_src
-#
-#			# download straties's log files from JR server for account day100
-#			cd $this_dir
-#			STRA_LOG="/home/u910019/explorer/day100/backup/dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-#			scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
-#			cd ${STRATEGY_DIR}
-#			stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
-#			echo `pwd`
-#			openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
-#			#tar -v --remove-files -xzf $stra_src
-#			rm $stra_src
-#
-#			#---combine both day28 and day100
-#			cd $this_dir
-#			cd ${STRATEGY_DIR}
-#			stra_dest="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.bz2"
-#			#rm ./log/+([a-z])+([0-9])_*.txt
-#			tar -v  --remove-files -cvjf $stra_dest ./log
+			cd $this_dir
+			STRA_LOG="/home/u910019/explorer/day28/backup/dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
+			scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
+			cd ${STRATEGY_DIR}
+			echo `pwd`
+			stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
+			openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
+			#tar -v --remove-files -xzf $stra_src
+			rm $stra_src
+
+			# download straties's log files from JR server for account day100
+			cd $this_dir
+			STRA_LOG="/home/u910019/explorer/day100/backup/dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
+			scp -P 44153 -v "u910019@101.231.3.117:${STRA_LOG}" ${STRATEGY_DIR}
+			cd ${STRATEGY_DIR}
+			stra_src="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.gz"
+			echo `pwd`
+			openssl des3 -d -k explorer -salt -in ./$stra_src | tar --remove-files  -xvzf -
+			#tar -v --remove-files -xzf $stra_src
+			rm $stra_src
+
+			#---combine both day28 and day100
+			cd $this_dir
+			cd ${STRATEGY_DIR}
+			stra_dest="dce_trad_${SUFFIX}_`date +%y%m%d`.tar.bz2"
+			#rm ./log/+([a-z])+([0-9])_*.txt
+			tar -v  --remove-files -cvjf $stra_dest ./log
 
 # download market data from JR server
 cd $this_dir
