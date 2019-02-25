@@ -21,28 +21,32 @@ function upload_files
 	# 910028
 	echo "-----------explorer: begin proc 910028-----------------------"
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night28/x-dce/*night.so'
-	scp -P 44153 ./lib/packaged/st*_night.so		u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
-	scp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
-	scp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/
-	scp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
-	scp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/
-	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night28/x-dce/tools/*.log'
-	ssh -p 44153							u910019@101.231.3.117 '/home/u910019/explorer/night28/x-dce/tools/configurator.py'
-	scp -P 44153							u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/configurator.log ./
+	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night28/x-dce/st*.txt'
+	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night28/x-dce/tools/st*.txt'
+	scp -Cp -P 44153 ./lib/packaged/st*_night.so		u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/
+	scp -Cp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/
+	scp -Cp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/
+	ssh -C -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night28/x-dce/tools/*.log'
+	ssh -C -p 44153							u910019@101.231.3.117 '/home/u910019/explorer/night28/x-dce/tools/configurator.py'
+	scp -Cp -P 44153							u910019@101.231.3.117:/home/u910019/explorer/night28/x-dce/tools/configurator.log ./
 	cat ./configurator.log
 	echo "-----------explorer: end proc 910028-----------------------"
 
 	# 910100
 	echo "-----------explorer: begin proc 910100-----------------------"
-	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/*night.so'
-	scp -P 44153 ./lib/packaged/st*_night.so		u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
-	scp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
-	scp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/
-	scp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
-	scp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/
-	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/tools/*.log'
-	ssh -p 44153							u910019@101.231.3.117 '/home/u910019/explorer/night100/x-dce/tools/configurator.py'
-	scp -P 44153							u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/configurator.log ./
+	ssh -Cp -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/*night.so'
+	ssh -Cp -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/st*.txt'
+	ssh -Cp -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/tools/st*.txt'
+	scp -Cp -P 44153 ./lib/packaged/st*_night.so		u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/
+	scp -Cp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/
+	scp -Cp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/
+	ssh -C -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/night100/x-dce/tools/*.log'
+	ssh -C -p 44153							u910019@101.231.3.117 '/home/u910019/explorer/night100/x-dce/tools/configurator.py'
+	scp -Cp -P 44153							u910019@101.231.3.117:/home/u910019/explorer/night100/x-dce/tools/configurator.log ./
 	cat ./configurator.log
 	echo "-----------explorer: end proc 910100-----------------------"
 }

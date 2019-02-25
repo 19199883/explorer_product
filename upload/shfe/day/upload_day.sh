@@ -21,56 +21,64 @@ function upload_files
 	# 910019
 	echo "--------------explorer: begin proc 910019-----------------------"
 	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/*day.so'
-	scp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
-	scp -P 44163 ./ev/st_rb.txt	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
-	scp -P 44163 ./ev/st_rb.txt	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
-	scp -P 44163 ./19/*.csv			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
-	scp -P 44163 ./19/*.csv			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
-	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/tools/*.log'
-	ssh -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day19/x-shfe/tools/configurator.py'
-	scp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/configurator.log ./
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/st*.txt'
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/tools/st*.txt'
+	scp -Cp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
+	scp -Cp -P 44163 ./ev/st_rbx.txt	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
+	scp -Cp -P 44163 ./ev/st_rbx.txt	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
+	scp -Cp -P 44163 ./19/*.csv			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
+	scp -Cp -P 44163 ./19/*.csv			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
+	ssh -C -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/tools/*.log'
+	ssh -C -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day19/x-shfe/tools/configurator.py'
+	scp -Cp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/configurator.log ./
 	cat ./configurator.log
 	echo "--------------explorer: end proc 910019-----------------------"
 
 	# 910063
-#	echo "-------------explorer: begin proc 910063--------------"
-#	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/*day.so'
-#	scp -P 44163 ./lib/packaged/st*_day.so ./lib/packaged/st*_test.so	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
-#	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
-#	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/
-#	scp -P 44163 ./63/*.csv			u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
-#	scp -P 44163 ./63/*.csv			u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/
-#	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/tools/*.log'
-#	ssh -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day63/x-shfe/tools/configurator.py'
-#	scp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/configurator.log ./
-#	cat ./configurator.log
-#	echo "-------------explorer: end proc 910063--------------"
+	echo "-------------explorer: begin proc 910063--------------"
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/*day.so'
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/st*.txt'
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/tools/st*.txt'
+	scp -Cp -P 44163 ./lib/packaged/st*_day.so ./lib/packaged/st*_test.so	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/
+	scp -Cp -P 44163 ./63/*.csv			u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/
+	scp -Cp -P 44163 ./63/*.csv			u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/
+	ssh -C -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day63/x-shfe/tools/*.log'
+	ssh -C -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day63/x-shfe/tools/configurator.py'
+	scp -Cp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day63/x-shfe/tools/configurator.log ./
+	cat ./configurator.log
+	echo "-------------explorer: end proc 910063--------------"
 
 	# 910109
 	echo "-------------explorer: begin proc 910109--------------"
 	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day109/x-shfe/*day.so'
-	scp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
-	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
-	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/
-	scp -P 44163 ./109/*.csv			u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
-	scp -P 44163 ./109/*.csv			u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/
-	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day109/x-shfe/tools/*.log'
-	ssh -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day109/x-shfe/tools/configurator.py'
-	scp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/configurator.log ./
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day109/x-shfe/st*.txt'
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day109/x-shfe/tools/st*.txt'
+	scp -Cp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/
+	scp -Cp -P 44163 ./109/*.csv			u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/
+	scp -Cp -P 44163 ./109/*.csv			u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/
+	ssh -C -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day109/x-shfe/tools/*.log'
+	ssh -C -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day109/x-shfe/tools/configurator.py'
+	scp -Cp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day109/x-shfe/tools/configurator.log ./
 	cat ./configurator.log
 	echo "-------------explorer: end proc 910109--------------"
 
 	# 910111
 	echo "-------------explorer: begin proc 910111--------------"
 	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day111/x-shfe/*day.so'
-	scp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
-	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
-	scp -P 44163 ./ev/st_nrb.txt	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/
-	scp -P 44163 ./111/*.csv			u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
-	scp -P 44163 ./111/*.csv			u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/
-	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day111/x-shfe/tools/*.log'
-	ssh -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day111/x-shfe/tools/configurator.py'
-	scp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/configurator.log ./
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day111/x-shfe/st*.txt'
+	ssh -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day111/x-shfe/tools/st*.txt'
+	scp -Cp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
+	scp -Cp -P 44163 ./ev/st.txt	u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/
+	scp -Cp -P 44163 ./111/*.csv			u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/
+	scp -Cp -P 44163 ./111/*.csv			u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/
+	ssh -C -p 44163						u910019@101.231.3.117 'rm /home/u910019/trade/day111/x-shfe/tools/*.log'
+	ssh -C -p 44163						u910019@101.231.3.117 '/home/u910019/trade/day111/x-shfe/tools/configurator.py'
+	scp -Cp -P 44163						u910019@101.231.3.117:/home/u910019/trade/day111/x-shfe/tools/configurator.log ./
 	cat ./configurator.log
 	echo "-------------explorer: end proc 910111--------------"
 
