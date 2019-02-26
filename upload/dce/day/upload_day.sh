@@ -39,14 +39,14 @@ function upload_files
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day100/x-dce/*day.so'
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day100/x-dce/st*.txt'
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day100/x-dce/tools/st*.txt'
-	scp -P 44153 -Cp ./lib/packaged/st*_day.so		u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
-	scp -P 44153 -Cp ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
-	scp -P 44153 -Cp ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/
-	scp -P 44153 -Cp ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
-	scp -P 44153 -Cp ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/
-	ssh -p 44153 -C    						u910019@101.231.3.117 'rm /home/u910019/explorer/day100/x-dce/tools/*.log'
-	ssh -p 44153 -C    						u910019@101.231.3.117 '/home/u910019/explorer/day100/x-dce/tools/configurator.py'
-	scp -P 44153 -Cp    						u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/configurator.log ./
+	scp -Cp -P 44153 ./lib/packaged/st*_day.so		u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
+	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/
+	scp -Cp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/
+	scp -Cp -P 44153 ./100/*.csv				u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/
+	ssh -C  -p 44153   						u910019@101.231.3.117 'rm /home/u910019/explorer/day100/x-dce/tools/*.log'
+	ssh -C  -p 44153   						u910019@101.231.3.117 '/home/u910019/explorer/day100/x-dce/tools/configurator.py'
+	scp -Cp -P 44153    						u910019@101.231.3.117:/home/u910019/explorer/day100/x-dce/tools/configurator.log ./
 	cat ./configurator.log
 	echo "---------explorer: end proc 910100----------------"
 
