@@ -34,6 +34,22 @@ function upload_files
 	cat ./configurator.log
 	echo "-------------------explorer: end proc 910017"
 
+	# 910113
+	echo "-------------------explorer: begin proc 910113"
+	ssh -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_night113/x-zce/*night.so'
+	ssh -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_night113/x-zce/st*.txt'
+	ssh -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_night113/x-zce/tools/st*.txt'
+	scp -Cp -P 8012 ./lib/packaged/*.so	u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/
+	scp -Cp -P 8012 ./ev/st.txt					u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/
+	scp -Cp -P 8012 ./ev/st.txt					u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/tools/
+	scp -Cp -P 8012 ./113/*.csv					u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/
+	scp -Cp -P 8012 ./113/*.csv					u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/tools/
+	ssh -C -p 8012							u910019@1.193.38.91 'rm /home/u910019/trade/zce_night113/x-zce/tools/*.log'
+	ssh -C -p 8012							   u910019@1.193.38.91 '/home/u910019/trade/zce_night113/x-zce/tools/configurator.py'
+	scp -Cp -P 8012								u910019@1.193.38.91:/home/u910019/trade/zce_night113/x-zce/tools/configurator.log ./
+	cat ./configurator.log
+	echo "-------------------explorer: end proc 910113"
+
 }
 
 ###################

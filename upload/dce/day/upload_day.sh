@@ -22,10 +22,20 @@ function upload_files
 	echo "------------explorer proc 910028------------------"
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/*day.so'
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/st*.txt'
+# test
+	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/*.txt'
 	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/tools/st*.txt'
+# test
+	ssh -p 44153							u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/tools/*.txt'
 	scp -Cp -P 44153 ./lib/packaged/st*_day.so		u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/
+# test
+	scp -Cp -P 44153 ./lib/packaged/*_day.so		u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/
 	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/
+# test
+	scp -Cp -P 44153 ./ev/*.txt					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/
 	scp -Cp -P 44153 ./ev/st.txt					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/tools/
+# test
+	scp -Cp -P 44153 ./ev/*.txt					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/tools/
 	scp -Cp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/
 	scp -Cp -P 44153 ./28/*.csv					u910019@101.231.3.117:/home/u910019/explorer/day28/x-dce/tools/
 	ssh -p 44153    						u910019@101.231.3.117 'rm /home/u910019/explorer/day28/x-dce/tools/*.log'
