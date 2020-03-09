@@ -15,6 +15,9 @@ function encrypt_so
 
 function upload_files
 {
+echo -e "\e[41;37m  警告！！！\n 保证不要覆盖服务器端的最新K线文件 \033[0m"
+read -p "" confirm
+
 ###################
 # explore
 ###############
