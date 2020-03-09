@@ -24,10 +24,16 @@ function upload_files
 	ssh -p 44163							u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/st*.txt'
 	ssh -p 44163							u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/tools/st*.txt'
 	scp -Cp -P 44163 ./lib/packaged/st*_day.so	u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
+
 	scp -Cp -P 44163 ./ev/st_rbx.txt			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
 	scp -Cp -P 44163 ./ev/st_rbx.txt			u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
 	scp -Cp -P 44163 ./ev/st.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
 	scp -Cp -P 44163 ./ev/st.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
+	scp -Cp -P 44163 ./ev/kline*.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/st_data/
+	scp -Cp -P 44163 ./ev/5xx_ev.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/ev/
+	scp -Cp -P 44163 ./ev/5xx_ev.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
+	scp -Cp -P 44163 ./ev/5xx_ev.txt				u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
+
 	scp -Cp -P 44163 ./19/*.csv					u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/
 	scp -Cp -P 44163 ./19/*.csv					u910019@101.231.3.117:/home/u910019/trade/day19/x-shfe/tools/
 	ssh -C -p 44163							u910019@101.231.3.117 'rm /home/u910019/trade/day19/x-shfe/tools/*.log'

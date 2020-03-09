@@ -24,8 +24,14 @@ function upload_files
 	ssh -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_day17/x-zce/st*.txt'
 	ssh -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_day17/x-zce/tools/st*.txt'
 	scp -Cp -P 8012 ./lib/packaged/st*_day.so	u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/
+
 	scp -Cp -P 8012 ./ev/st.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/
 	scp -Cp -P 8012 ./ev/st.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/tools/
+	scp -Cp -P 8012 ./ev/kline_*.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/st_data/
+	scp -Cp -P 8012 ./ev/5xx_ev.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/ev/
+	scp -Cp -P 8012 ./ev/5xx_ev.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/tools/
+	scp -Cp -P 8012 ./ev/5xx_ev.txt					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/
+
 	scp -Cp -P 8012 ./17/*.csv					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/
 	scp -Cp -P 8012 ./17/*.csv					u910019@1.193.38.91:/home/u910019/trade/zce_day17/x-zce/tools/
 	ssh -C -p 8012								u910019@1.193.38.91 'rm /home/u910019/trade/zce_day17/x-zce/tools/*.log'
